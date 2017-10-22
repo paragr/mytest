@@ -1,0 +1,26 @@
+search_s('ou=users,dc=test,dc=com', 2, '(uid=%(user)s)') returned 1 objects: cn=parag1 rajabhoj,ou=users,dc=test,dc=com
+Populating Django user paragr
+search_s('ou=users,dc=test,dc=com', 2, '(uid=%(user)s)') returned 1 objects: cn=parag1 rajabhoj,ou=users,dc=test,dc=com
+Populating Django user paragr
+search_s('ou=users,dc=test,dc=com', 2, '(uid=%(user)s)') returned 0 objects: 
+Authentication failed for admin: failed to map the username to a DN.
+search_s('ou=users,dc=test,dc=com', 2, '(uid=%(user)s)') returned 0 objects: 
+Authentication failed for admin: failed to map the username to a DN.
+search_s('ou=users,dc=test,dc=com', 2, '(uid=%(user)s)') returned 0 objects: 
+Authentication failed for admin: failed to map the username to a DN.
+search_s('ou=users,dc=test,dc=com', 2, '(uid=%(user)s)') returned 0 objects: 
+Authentication failed for admin: failed to map the username to a DN.
+search_s('ou=users,dc=test,dc=com', 2, '(uid=%(user)s)') returned 1 objects: cn=parag1 rajabhoj,ou=users,dc=test,dc=com
+Created Django user paragr
+Populating Django user paragr
+search_s('ou=users,dc=test,dc=com', 2, '(uid=%(user)s)') returned 1 objects: cn=parag1 rajabhoj,ou=users,dc=test,dc=com
+Created Django user paragr
+Populating Django user paragr
+search_s('ou=users,dc=test,dc=com', 2, '(uid=%(user)s)') returned 0 objects: 
+Authentication failed for admin: failed to map the username to a DN.
+search_s('ou=users,dc=test,dc=com', 2, '(uid=%(user)s)') returned 0 objects: 
+Authentication failed for admin: failed to map the username to a DN.
+search_s('ou=users,dc=test,dc=com', 2, '(uid=%(user)s)') returned 0 objects: 
+Authentication failed for admin: failed to map the username to a DN.
+search_s('ou=users,dc=test,dc=com', 2, '(uid=%(user)s)') returned 0 objects: 
+Authentication failed for admin: failed to map the username to a DN.

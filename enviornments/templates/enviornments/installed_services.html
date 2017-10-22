@@ -1,0 +1,14 @@
+{% if installed_services %}
+	<table class="table">
+		<tr><th>Service</th><th>Status</th><th>Action</th></tr>
+		{% for service in installed_services %}
+			{% if service in running_services %}
+				<tr><td>{{ service }}</td><td>Running</td><td><input type="button" value="Stop Service" class="btn btn-sm btn-danger" id="/enviornments/{{env}}/{{db}}/{{service}}/stop/"></input></td></tr>
+			{% else %}
+				<tr><td>{{ service }}</td><td>Stopped</td><td><input type="button" value="Start Service" class="btn btn-sm btn-success" id="/enviornments/{{env}}/{{db}}/{{service}}/start/"></input></td></tr>
+			{% endif %}
+		{% endfor %}
+	</table>
+{% else %}
+	<p>No Enviornments available..!!</p>
+{% endif %}

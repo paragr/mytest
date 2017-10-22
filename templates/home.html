@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block left_side_nav %}
+<ul class="nav nav-pills nav-stacked">
+	<li class="active app_home"><a href="/">Home</a></li>
+	<li class="app_home" id="enviornments"><a href="#">Enviornments</a></li>
+	<li class="app_home" id="accessreq/view_requests_list"><a href="#">Access Requests</a></li>
+	<li class="app_home" id="accessreq/raise_request"><a href="#">Raise Access</a></li>
+	<li class="app_home" id="databases"><a href="#">Databases</a></li>
+	<li class="app_home" id="jobs"><a href="#">Jobs</a></li>
+</ul>
+{% endblock %}
+
+{% block middle_block %}
+	<div id="home_content">
+		<div class="jumbotron">
+		  <h1>Hello {{ user }}, Welcome to My Dashboard!</h1>
+		  <p>...</p>
+		</div>
+	</div>
+{% endblock %}
