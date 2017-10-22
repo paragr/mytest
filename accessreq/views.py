@@ -33,6 +33,27 @@ class AjaxableResponseMixin(object):
 		# We make sure to call the parent's form_valid() method because
 		# it might do some processing (in the case of CreateView, it will
 		# call form.save() for example).
+		
+		response = super(AjaxableResponseMixin, self).form_valid(form)
+		if self.request.is_ajax():
+			data = {
+				'pk': self.obj.pk,
+			}
+			return JsonResponse(data)
+		else:
+			return response
+			
+
+class RaiseRequest(AjaxableResponseMixin,FormView):
+	template_name = 'accessreq/accessrequests_form.html'
+	form_class = AccessRequestForm
+	success_url = '/accessreq/view_requests_list/'
+	model = AccessRequests
+	
+	def form_valid(self, form):
+		# We make sure to call the parent's form_valid() method because
+		# it might do some processing (in the case of CreateView, it will
+		# call form.save() for example).
 		self.obj = form.save(commit=False)
 		self.obj.requested_by = self.request.user
 		self.obj.status = "Pending"
@@ -46,15 +67,30 @@ class AjaxableResponseMixin(object):
 			return JsonResponse(data)
 		else:
 			return response
-			
-			
+	
 
-class RaiseRequest(AjaxableResponseMixin,FormView):
-	template_name = 'accessreq/accessrequests_form.html'
-	form_class = AccessRequestForm
+class ApproveRequest(AjaxableResponseMixin,FormView):
 	success_url = '/accessreq/view_requests_list/'
 	model = AccessRequests
-
+	
+	def form_valid(self, form):
+		# We make sure to call the parent's form_valid() method because
+		# it might do some processing (in the case of CreateView, it will
+		# call form.save() for example).
+		#self.obj = form.save(commit=False)
+		#self.obj.requested_by = self.request.user
+		#self.obj.status = "Pending"
+		#self.obj.save()
+		print "******************************* inside form valid method of ApproveRequest class ***********************"
+		response = super(AjaxableResponseMixin, self).form_valid(form)
+		if self.request.is_ajax():
+			data = {
+				'pk': self.obj.pk,
+			}
+			return JsonResponse(data)
+		else:
+			return response
+			
 '''	
 	def get(self, request, *args, **kwargs):
 		print "*********************** inside get method ********************************"
