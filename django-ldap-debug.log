@@ -24,3 +24,5 @@ search_s('ou=users,dc=test,dc=com', 2, '(uid=%(user)s)') returned 0 objects:
 Authentication failed for admin: failed to map the username to a DN.
 search_s('ou=users,dc=test,dc=com', 2, '(uid=%(user)s)') returned 0 objects: 
 Authentication failed for admin: failed to map the username to a DN.
+search_s('ou=users,dc=test,dc=com', 2, '(uid=%(user)s)') returned 0 objects: 
+Authentication failed for admin: failed to map the username to a DN.

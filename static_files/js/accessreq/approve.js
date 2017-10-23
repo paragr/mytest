@@ -22,13 +22,13 @@ approveRequest = function() {
 								
 			$.ajax({
 				url: url,
-				type: "POST",
+				type: "GET",
 				data: dataString,
 				success: function(data){
 					$("li[id*='accessreq/view_requests_list']").trigger('click');
 				},
 				error: function(error) {
-					alter('error occured during ajax call');
+					alert('error occured during ajax call');
 				},
 			});
 	return false;

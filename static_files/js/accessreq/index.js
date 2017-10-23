@@ -52,7 +52,7 @@ raiseRequest = function() {
 					//});
 				},
 				error: function(error) {
-					alter('error occured during ajax call');
+					alert('error occured during ajax call');
 				},
 			});
 	return false;

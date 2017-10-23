@@ -4,6 +4,6 @@
 <table class="table">
 	<tr><th>Request #</th><th>Users to Add</th><th>Permission Group</th><th>Requested By</th><th>Requested On</th><th>Status</th><th>Action</th></tr>
 	{% for access_req in access_requests %}
-		<tr><td>{{access_req.id}}</td><td>{{ access_req.users_list }}</td><td>{{ access_req.env }}</td><td>{{ access_req.requested_by }}</td><td>{{ access_req.request_date }}</td><td>{{ access_req.status }}</td><td><form method="post">{% csrf_token %}<input class="btn btn-sm btn-success" type="submit" value="Approve" id="/accessreq/approved/{{access_req.id}}/"></input></form></td></tr>
+		<tr><td>{{access_req.id}}</td><td>{{ access_req.users_list }}</td><td>{{ access_req.env }}</td><td>{{ access_req.requested_by }}</td><td>{{ access_req.request_date }}</td><td>{{ access_req.status }}</td><td><form method="get">{% csrf_token %}<input class="btn btn-sm btn-success" type="submit" value="Approve" id="/accessreq/approved/{{access_req.id}}/"></input></form></td></tr>
 	{% endfor %}
 </table>
