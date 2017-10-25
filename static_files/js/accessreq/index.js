@@ -45,11 +45,6 @@ raiseRequest = function() {
 				type: "POST",
 				success: function(data){
 					$("li[id*='accessreq/view_requests_list']").trigger('click');
-					//$.get('/accessreq/view_requests_list/',function(data){
-						//$('#home_content').html(data);
-						//$('.app_home').removeClass('active');
-						//$("li[id*='accessreq/view_requests_list']").addClass('active');
-					//});
 				},
 				error: function(error) {
 					alert('error occured during ajax call');

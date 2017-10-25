@@ -12,8 +12,10 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import ldap
+import sys
 from django_auth_ldap.config import LDAPSearch, GroupOfNamesType
 
+sys.path.append('C:/PARAG/PythonProgramms/DjangoWebApplication/paragr/')
 # Baseline configuration.
 AUTH_LDAP_SERVER_URI = "ldap://192.168.56.16:389"
 

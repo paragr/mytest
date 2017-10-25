@@ -4,6 +4,17 @@
 <table class="table">
 	<tr><th>Request #</th><th>Users to Add</th><th>Permission Group</th><th>Requested By</th><th>Requested On</th><th>Status</th><th>Action</th></tr>
 	{% for access_req in access_requests %}
-		<tr><td>{{access_req.id}}</td><td>{{ access_req.users_list }}</td><td>{{ access_req.env }}</td><td>{{ access_req.requested_by }}</td><td>{{ access_req.request_date }}</td><td>{{ access_req.status }}</td><td><form method="get">{% csrf_token %}<input class="btn btn-sm btn-success" type="submit" value="Approve" id="/accessreq/approved/{{access_req.id}}/"></input></form></td></tr>
+		{% if access_req.status != "Approved" %}
+			<tr><td>{{access_req.id}}</td><td>{{ access_req.users_list }}</td><td>{{ access_req.env }}</td><td>{{ access_req.requested_by }}</td><td>{{ access_req.request_date }}</td><td>{{ access_req.status }}</td><td><form method="get">{% csrf_token %}<input class="btn btn-sm btn-success" type="submit" value="Approve" id="/accessreq/approved/{{access_req.id}}/"></input></form></td></tr>
+		{% endif %}
+	{% endfor %}
+</table>
+<br/><br/>
+<table class="table">
+	<tr><th>Request #</th><th>Users to Add</th><th>Permission Group</th><th>Status</th><th>Message</th></tr>
+	{% for access_req in access_requests %}
+		{% if access_req.status == "Approved" %}
+			<tr><td>{{access_req.id}}</td><td>{{ access_req.users_list }}</td><td>{{ access_req.env }}</td><td>{{ access_req.status }}</td><td>{{ access_req.message }}</td></tr>
+		{% endif %}
 	{% endfor %}
 </table>

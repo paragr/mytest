@@ -14,6 +14,7 @@ class AccessRequests(models.Model):
 	request_date = models.DateField(auto_now_add=True,null=True)
 	approved_by = models.CharField(max_length=100,null=True)
 	approved_date = models.DateField(null=True)
+	message = models.CharField(max_length=1000,null=True)
 	
 	class Meta:
 		db_table = 'access_requests'
